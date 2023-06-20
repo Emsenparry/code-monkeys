@@ -13,7 +13,7 @@ class productController {
 
   update = (req, res) => {};
 
-  // delete
+  update = (req, res) => {};
 }
 
 export default productController;
