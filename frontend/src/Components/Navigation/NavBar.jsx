@@ -6,9 +6,9 @@ const NavBar = () => {
     return (
       <div className="Bar">
         <h1>ApeShit</h1>
-        <MdLogin />
         <input type="checkbox" id="nav-check" />
         <div className="nav-btn">
+        <MdLogin className="loginIcon" size={25} />
           <label htmlFor="nav-check">
             <span></span>
             <span></span>

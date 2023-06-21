@@ -33,6 +33,13 @@
   }
 
   @media (max-width: 600px) {
+    .loginIcon{
+      position: absolute;
+      top: 1.5vh;
+      right: 15vw;
+      height: auto;
+      width: auto;
+    }
     .nav-btn {
       display: inline-block;
       position: absolute;
