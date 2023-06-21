@@ -1,6 +1,6 @@
 import React from "react";
-import './NavBar.scss'
-import { MdLogin } from 'react-icons/md'
+import "./NavBar.scss";
+import { MdLogin } from "react-icons/md";
 
 const NavBar = () => {
     return (
