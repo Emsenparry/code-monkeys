@@ -6,40 +6,44 @@
   display: flex;
   align-items: center;
 
-
-  > .nav-btn {
+  .nav-btn {
     display: none;
   }
-  > .nav-links {
+
+  .nav-links {
     display: inline;
     float: right;
     margin-right: 10%;
     font-size: 18px;
-    > a {
+
+    a {
       display: inline-block;
-      padding: 13px 10px 13px 10px;
+      padding: 13px 10px;
       text-decoration: none;
       color: #efefef;
+
       &:hover {
         background-color: rgba(0, 0, 0, 0.3);
       }
     }
   }
-  > #nav-check {
+
+  #nav-check {
     display: none;
   }
-}
-@media (max-width: 600px) {
-  .Bar {
-    > .nav-btn {
+
+  @media (max-width: 600px) {
+    .nav-btn {
       display: inline-block;
       position: absolute;
-      right: 0px;
-      top: 0px;
-      > label {
+      right: 0;
+      top: 0;
+
+      label {
         display: inline-block;
         padding: 3vw;
-        > span {
+
+        span {
           display: block;
           width: 25px;
           height: 10px;
@@ -47,46 +51,43 @@
         }
       }
     }
+
     #nav-check {
       &:checked {
-        ~ {
-          .nav-btn {
-            > label {
-              background-color: rgba(0, 0, 0, 0.3);
-            }
-          }
+        ~ .nav-btn > label {
+          background-color: rgba(0, 0, 0, 0.3);
         }
       }
     }
-    > .nav-links {
+
+    .nav-links {
       position: absolute;
       display: block;
       width: 100%;
       background-color: #333;
-      height: 0px;
+      height: 0;
       transition: all 0.3s ease-in;
-      overflow-y: hidden;
+      overflow: hidden;
       top: 50px;
-      left: 0px;
-      > a {
+      left: 0;
+
+      a {
         display: block;
         width: 100%;
       }
     }
-    > #nav-check {
+
+    #nav-check {
       &:not(:checked) {
-        ~ {
-          .nav-links {
-            height: 0px;
-          }
+        ~ .nav-links {
+          height: 0;
         }
       }
+
       &:checked {
-        ~ {
-          .nav-links {
-            height: calc(100vh - 50px);
-            overflow-y: auto;
-          }
+        ~ .nav-links {
+          height: calc(100vh - 50px);
+          
         }
       }
     }
