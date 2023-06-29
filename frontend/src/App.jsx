@@ -1,11 +1,10 @@
-import './App.scss';
-import Header from './Components/Partials/Header/Header';
-
+import "./App.scss";
+import Home from "./Components/Pages/Home/Home";
 
 function App() {
   return (
     <>
-    <Header />
+      <Home />
     </>
   );
 }

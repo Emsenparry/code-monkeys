@@ -1,0 +1,19 @@
+.thumbs-wrapper,
+.axis-vertical,
+.carousel-status {
+  visibility: hidden;
+  display: inline;
+  position: absolute;
+}
+
+.parent {
+  position: relative;
+}
+
+.div1 {
+  position: relative;
+}
+
+.div1 .carousel .slide {
+  position: relative;
+}

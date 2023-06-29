@@ -1,0 +1,29 @@
+.containerGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .productCard {
+    text-align: center;
+    padding: 0 5em 0 5em;
+
+    h2 {
+      font-size: 1.2em;
+      font-family: "Open-sans", sans-serif;
+      margin: 0;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: "Open-sans", sans-serif;
+      margin-top: 0.5em;
+      font-size: 0.9em;
+      font-weight: 300;
+      line-height: 150%;
+    }
+    img {
+      border-radius: 50%;
+      max-width: 100%;
+    }
+  }
+}
