@@ -6,7 +6,7 @@ import GalleryCard from "../GalleryCards/GalleryCards";
 const Home = () => {
   return (
     <>
-      <Header />;
+      <Header />
       <CarouselImages />
       <GalleryCard />
     </>

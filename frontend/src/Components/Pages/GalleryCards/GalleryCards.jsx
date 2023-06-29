@@ -5,6 +5,7 @@ import "./GalleryCards.scss";
 const GalleryCard = () => {
   const url = "http://localhost:4000/products";
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     axios.get(url).then((data) => {
       console.log(data.data.items);
