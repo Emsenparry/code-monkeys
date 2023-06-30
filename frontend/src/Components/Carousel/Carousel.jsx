@@ -5,25 +5,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Carousel.scss";
 
 const CarouselImages = () => {
-  const url = "http://localhost:4000/products";
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        console.log(response.data.items);
-        setImages(response.data.items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    const url = "http://localhost:4000/products";
+    const getData = async () => {
+      try{
+        const result = await axios.get(url)
+        setImages(result.data.items)
+      } catch(err) {
+        console.error(err)
+      }
+    }
+    getData()
+  }, [setImages]);
 
   return (
     <div className="parent top">
       <Carousel className="div1">
-        {images.map((image) => (
+        {images && images.map((image) => (
           <Carousel.Item key={image.id}>
             <img src={image.img} alt="product_image" />
           </Carousel.Item>

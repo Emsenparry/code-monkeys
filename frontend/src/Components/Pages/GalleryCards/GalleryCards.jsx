@@ -1,29 +1,34 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import "./GalleryCards.scss";
 
 const GalleryCard = () => {
-  const url = "http://localhost:4000/products";
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then((data) => {
-      console.log(data.data.items);
-      setProducts(data.data.items.slice(0, 8));
-    });
-  }, []);
+    const url = "http://localhost:4000/products";
+    const getData = async () => {
+      try{
+        const result = await axios.get(url)
+        console.log(result);
+        setProducts(result.data)
+      } catch(err) {
+        console.error(err)
+      }
+      
+    }
+    getData()
+  }, [setProducts]);
 
   return (
     <div className="containerGallery">
-      {products.map((data) => {
-        return (
-          <figure className="productCard" key={data.id}>
-            <img src={data.img} alt="img_news" />
-            <h2>{data.title}</h2>
-            <p>{data.description}</p>
-          </figure>
-        );
-      })}
+      {products && products.map(data => (
+        <figure className="productCard" key={data.id}>
+          <img src={data.img} alt="img_news" />
+          <h2>{data.title}</h2>
+          <p>{data.description}</p>
+        </figure>
+      ))}
     </div>
   );
 };
